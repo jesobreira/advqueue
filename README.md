@@ -69,6 +69,7 @@ onProcessingTimeout = ({ id, name, priority, resolve, reject, createdAt, fn, raw
 	// or perhaps you want to wait 5 seconds then retry?
 	setTimeout(() => resolve(queue.add(rawFn, priority, name)), 5000)
 }
+```
 
 The callback gets called with an object with the following properties:
 
@@ -81,7 +82,7 @@ The callback gets called with an object with the following properties:
 * **startedAt**: UNIX timestamp of when the task has been started (for processing) - only for onProcessingTimeout
 * **fn**: the encapsuled function (for debugging only)
 * **rawFn**: the original callback (useful for retrying)
-```
+
 
 5. Adding a new task
 
